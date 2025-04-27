@@ -269,7 +269,15 @@ public class Teacher : MonoBehaviour
     {
         if (moveable)
         {
-            RandomMove();
+            if (followingTargets.Count < 5)
+            {
+                RandomMove();
+            }
+            else
+            {
+                Vector2 vecPos =  GameObject.Find("BlackHouse").transform.position;
+                transform.position = Vector2.MoveTowards(transform.position, vecPos, speed * Time.deltaTime);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
