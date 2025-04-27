@@ -7,6 +7,11 @@ public class BlackHouse : MonoBehaviour
     public bool isInArea;
     public float rad = 3f;
 
+    public GameObject p2;
+    public GameObject p3;
+    public GameObject p4;
+
+
     public GameCore gameCore;
     public PlayerControl playerControl;
 
@@ -16,11 +21,30 @@ public class BlackHouse : MonoBehaviour
         gameCore = GameObject.Find("GameCore").GetComponent<GameCore>();
         playerControl = gameCore.playerControl;
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
 
+        if (collision.transform.gameObject.tag == "teacher")
+        {
+            Debug.Log("aaa");
+            //save in;
+            teacherSave(collision.gameObject);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.transform.gameObject.tag == "teacher")
+        {
+            Debug.Log("aaa");
+            //save in;
+            teacherSave(collision.gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.gameObject.tag == "teacher")
         {
+            Debug.Log("aaa");
             //save in;
             teacherSave(collision.gameObject);
         }
@@ -55,6 +79,21 @@ public class BlackHouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Vector2.Distance(p2.transform.position, transform.position) < rad)
+        {
+            teacherSave(p2);
+        }
+        if (Vector2.Distance(p3.transform.position, transform.position) < rad)
+        {
+            teacherSave(p3);
+        }
+        if (Vector2.Distance(p4.transform.position, transform.position) < rad)
+        {
+            teacherSave(p4);
+        }
+
+
         //Debug.Log("Vector¡G" + Vector2.Distance(playerControl.transform.position, transform.position));
         if (Vector2.Distance(playerControl.transform.position, transform.position) < rad)
         {
