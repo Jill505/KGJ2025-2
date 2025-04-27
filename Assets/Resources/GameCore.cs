@@ -101,7 +101,6 @@ public class GameCore : MonoBehaviour
         }
 
         //»s³y®g½u
-
         Vector2 pos = (teacher.gameObject.transform.position + eObject.transform.position) / 2;
 
         Vector2 dirVector = eObject.transform.position - teacher.gameObject.transform.position;
@@ -185,7 +184,7 @@ public class GameCore : MonoBehaviour
             }
 
             yield return null; 
-            eObject.makeFadeAndDel();
+            //eObject.makeFadeAndDel();
         }
 
         yield return null;

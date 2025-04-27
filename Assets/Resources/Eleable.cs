@@ -10,6 +10,8 @@ public class Eleable : MonoBehaviour
 
     public bool ableToBeEle = true;
 
+    public int myEleType = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
