@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BlackHouse : MonoBehaviour
@@ -15,6 +16,41 @@ public class BlackHouse : MonoBehaviour
         gameCore = GameObject.Find("GameCore").GetComponent<GameCore>();
         playerControl = gameCore.playerControl;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.gameObject.tag == "teacher")
+        {
+            //save in;
+            teacherSave(collision.gameObject);
+        }
+    }
+    public void teacherSave(GameObject teacher)
+    {
+        //Get teacher obj
+        Teacher tec = teacher.GetComponent<Teacher>();
+        while (tec.followingTargets.Count > 0)
+        {
+            GameObject swap = tec.followingTargets[0];
+            tec.followingTargets.RemoveAt(0);
+            Destroy(swap);
+            //add 1 point;
+            if (tec.myPlayerIndex == 2)
+            {
+                gameCore.p2Score += 1;
+            }
+            if (tec.myPlayerIndex == 3)
+            {
+                gameCore.p3Score += 1;
+            }
+            if (tec.myPlayerIndex == 4)
+            {
+                gameCore.p4Score += 1;
+            }
+        }
+
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -38,7 +74,6 @@ public class BlackHouse : MonoBehaviour
         }
 
     }
-
     IEnumerator studentSaveIn()
     {
         bool clamp = true;

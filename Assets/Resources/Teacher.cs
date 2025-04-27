@@ -14,6 +14,8 @@ public class Teacher : MonoBehaviour
     public GameObject soulPrefab;
     public bool moveable = false;
 
+    public int myPlayerIndex = 0;
+
     public bool inFight = false;
 
     [Header("teacher move sys")]

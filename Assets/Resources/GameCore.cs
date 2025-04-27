@@ -13,7 +13,9 @@ public class GameCore : MonoBehaviour
 
     [Header("Game System")]
     public int playerStudentIndex;
-
+    public int p2Score;
+    public int p3Score;
+    public int p4Score;
 
     public PlayerControl playerControl;
 
