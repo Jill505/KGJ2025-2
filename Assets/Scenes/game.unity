@@ -1063,6 +1063,7 @@ MonoBehaviour:
   player: {fileID: 1173544693}
   target: {fileID: 1173544698}
   fulence: 0.1
+<<<<<<< HEAD
 --- !u!1 &389874253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,6 +1229,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 695021338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 9cd0e8e (aaa)
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,6 +2692,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085075498}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &1085355578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,6 +2858,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 9cd0e8e (aaa)
 --- !u!1 &1127545884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,8 +4226,13 @@ Transform:
   m_GameObject: {fileID: 1879036142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 1.631, y: 0.2252, z: 0.003438897}
   m_LocalScale: {x: 3.42253, y: 2.3659098, z: 1.4093326}
+=======
+  m_LocalPosition: {x: -1.8578, y: 0.23, z: 0.003438897}
+  m_LocalScale: {x: 2.98, y: 2.06, z: 1.2271073}
+>>>>>>> parent of 9cd0e8e (aaa)
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 695021338}
@@ -4275,7 +4286,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 27.120697, y: 10.52876}
+  m_Size: {x: 18.844858, y: 10.52876}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4320,7 +4331,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 15.920916, y: 11.093333}
-    newSize: {x: 27.120697, y: 10.52876}
+    newSize: {x: 18.844858, y: 10.52876}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -4441,6 +4452,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1705360491}
   m_LocalEulerAnglesHint: {x: -3.469, y: 24.402, z: -156.022}
+<<<<<<< HEAD
 --- !u!1 &1952188434
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,6 +4618,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 9cd0e8e (aaa)
 --- !u!1 &1981108406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,6 +4901,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &2031271158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5052,6 +5067,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 9cd0e8e (aaa)
 --- !u!1 &2066409931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,7 +5351,16 @@ SceneRoots:
   - {fileID: 2004551834}
   - {fileID: 1047944532}
   - {fileID: 695021338}
+<<<<<<< HEAD
   - {fileID: 389874255}
   - {fileID: 2045807636}
   - {fileID: 1956253314}
   - {fileID: 1117808900}
+=======
+  - {fileID: 971624589}
+  - {fileID: 47947811}
+  - {fileID: 1374147957}
+  - {fileID: 2066409933}
+  - {fileID: 1901769385}
+  - {fileID: 328804155}
+>>>>>>> parent of 9cd0e8e (aaa)
