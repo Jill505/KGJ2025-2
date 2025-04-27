@@ -51,8 +51,11 @@ public class Eleable : MonoBehaviour
     public SpriteRenderer sr;
     public void makeFadeAndDel()
     {
-        sr = gameObject.GetComponent<SpriteRenderer>();
-        StartCoroutine(makeFadeCoroutine());
+        if (sr != null)
+        {
+            sr = gameObject.GetComponent<SpriteRenderer>();
+            StartCoroutine(makeFadeCoroutine());
+        }
     }
     IEnumerator makeFadeCoroutine()
     {
