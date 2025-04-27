@@ -19,6 +19,7 @@ public class BlackHouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Vector2.Distance(playerControl.gameCore.transform.position, transform.position¡G" + Vector2.Distance(playerControl.gameCore.transform.position, transform.position));
         if (Vector2.Distance(playerControl.gameCore.transform.position, transform.position) < rad)
         {
             //Debug.Log("player is in area");
