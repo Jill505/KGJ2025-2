@@ -72,11 +72,13 @@ public class Teacher : MonoBehaviour
 
                 if (ranX > transform.position.x)
                 {
-                    FacingPos = 1;
+                    FacingPos = -1;
+                    transform.rotation = Quaternion.Euler(0,180f,0);
                 }
                 else
                 {
-                    FacingPos= -1;
+                    FacingPos= 1;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
 
                 Debug.Log("yyy" + targetPos);
@@ -92,6 +94,7 @@ public class Teacher : MonoBehaviour
     public void GetOneSoul(Vector2 pos)
     {
         GameObject obj = Instantiate(soulPrefab, pos, Quaternion.identity);
+        obj.GetComponent<FallowingSoul>().teacher = this;
         followingTargets.Add(obj);
         fallowingSoulMakeALine();
     }
@@ -148,8 +151,8 @@ public class Teacher : MonoBehaviour
         {
             //Debug.Log("Rolling game");
 
-            int roll = Random.Range(0, 30);
-            if (roll <= 15)
+            int roll = Random.Range(0, 40);
+            if (roll <= 1)
             {
                 //對最近的目標發起戰鬥
                 if (target.GetComponent<Eleable>().ableToBeEle == true)

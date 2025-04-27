@@ -28,6 +28,7 @@ public class Eleable : MonoBehaviour
     //Line renederer, make a line and try make some animation.
     public void makeEle(GameObject tracker)
     {
+        Debug.Log("¦Ñ®v°õ¦æ brainwashing");
         sr = gameObject.GetComponent<SpriteRenderer>();
         StartCoroutine(makeEle2(tracker.gameObject.GetComponent<Teacher>()));
     }
@@ -51,8 +52,9 @@ public class Eleable : MonoBehaviour
     public SpriteRenderer sr;
     public void makeFadeAndDel()
     {
-        sr = gameObject.GetComponent<SpriteRenderer>();
+        sr = this.gameObject.GetComponent<SpriteRenderer>();
         StartCoroutine(makeFadeCoroutine());
+        
     }
     IEnumerator makeFadeCoroutine()
     {

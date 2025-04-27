@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   students: {fileID: 0}
+  ableToBeEle: 1
   targetPos: {fileID: 0}
   sr: {fileID: 0}
 --- !u!61 &836066522240615523
