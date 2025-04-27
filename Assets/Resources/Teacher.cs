@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using UnityEngineInternal;
 
@@ -12,6 +13,8 @@ public class Teacher : MonoBehaviour
     public GameCore gameCore;
     public GameObject soulPrefab;
     public bool moveable = false;
+
+    public bool inFight = false;
 
     [Header("teacher move sys")]
     public float FacingPos = 1f;
@@ -109,20 +112,19 @@ public class Teacher : MonoBehaviour
         }
     }
 
-    IEnumerator myFixedUpdate()
+    private void LateUpdate()
     {
-        WaitForSeconds sec = new WaitForSeconds(0.25f);
-        while (true)
-        {
-            GameObject target = the_teacherSensor.CheckClosestTarget(the_teacherSensor.detectedTargets);
-            teacherJudgeIsFight(target);
-
-            yield return sec;
-        }
+        GameObject target = the_teacherSensor.CheckClosestTarget(the_teacherSensor.detectedTargets);
+        teacherJudgeIsFight(target);
     }
-
     private void FixedUpdate()
     {
+        //Debug.Log(nowProcess + "now Process");
+        //nowProcess -= strength * Random.Range(1f, 3f) * 0.25f;
+        if (nowProcess < 0)
+        {
+            nowProcess = 0;
+        }
     }
     public void teacherJudgeIsFight(GameObject target)
     {
@@ -132,10 +134,15 @@ public class Teacher : MonoBehaviour
             //Debug.Log("Rolling player");
 
             int roll = Random.Range(0, 150);
+            roll = 1;
             if (roll <= 1 + (gameCore.playerControl.followingTargets.Count * 4))
             {
                 //對玩家發起戰鬥
-                Debug.Log(gameObject.name + "對玩家發起了戰鬥");
+                if (inFight == false)
+                {
+                    Debug.Log(gameObject.name + "對玩家發起了戰鬥");
+                    teacherFight();
+                }
             }
         }
         else if (the_teacherSensor.detectedTargets.Count > 0)
@@ -154,14 +161,24 @@ public class Teacher : MonoBehaviour
         }
 
     }
+    
     public void teacherFight()
     {
         StartCoroutine(teacherFightCoroutine());
     }
     IEnumerator teacherFightCoroutine()
     {
+        inFight = true;
+        float fightingTime = 0f;
+        bool fail = false;
         //開始
         teacherFightCanvas.SetActive(true);
+
+        PlayerControl playerControl = gameCore.playerControl;
+
+        playerControl.moveable = false;
+        moveable = false;
+
         bool T = true;
         float percentage = 0;
         inDurTime = 0;
@@ -170,22 +187,17 @@ public class Teacher : MonoBehaviour
         durLim = Random.Range(0.1f, 0.75f);
         durMax = durLim + durCCCCCC;
 
-        requireTime = 3f + (followingTargets.Count * 2f);
+        requireTime = 3.5f;
 
         //中間的過程
         while (T)
         {
             //輸入
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                nowProcess += 1f;
-
-            }
             percentage = nowProcess / max;
             showProcessImage.fillAmount = percentage;
 
             //掙扎
-            nowProcess -= strength * Time.deltaTime + (Random.Range(-1, 3)) ;
+            //nowProcess -= (strength  * Random.Range(-1, 3)) * Time.deltaTime;
             //顯示
             durBar.fillAmount = durMax;
             shell.fillAmount = durLim;
@@ -204,6 +216,13 @@ public class Teacher : MonoBehaviour
                 //戰鬥結束
                 T = false;
             }
+            
+            fightingTime += Time.deltaTime;
+            if (fightingTime > 10)
+            {
+                T= false;
+                fail = true;
+            }
 
             strength += Random.Range(0f, 0.3f) * Time.deltaTime;
             if (strength >= 20f)
@@ -216,21 +235,26 @@ public class Teacher : MonoBehaviour
 
         //結束
         teacherFightCanvas.SetActive(false);
+        playerControl.moveable = false;
+        moveable = true;
         yield return null;
-        //發放獎勵
-        for (int i = 0; i < followingTargets.Count; i++)
+        inFight = false;
+
+        if (fail == false)
         {
-            gameCore.playerControl.GetOneSoul();
+            //發放獎勵
+            for (int i = 0; i < followingTargets.Count; i++)
+            {
+                gameCore.playerControl.GetOneSoul();
+            }
         }
 
     }
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         gameCore = GameObject.Find("GameCore").GetComponent<GameCore>();
-        StartCoroutine(myFixedUpdate());
 
         moveable = true;
 
@@ -240,6 +264,15 @@ public class Teacher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RandomMove();
+        if (moveable)
+        {
+            RandomMove();
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log("nowProcss +1" + nowProcess);
+            nowProcess += 1f;
+        }
+        nowProcess -= strength* Time.deltaTime;
     }
 }

@@ -384,10 +384,11 @@ MonoBehaviour:
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
   moveable: 0
+  inFight: 0
   FacingPos: 1
   moveAreaA: {fileID: 606647963}
   moveAreaB: {fileID: 2004551833}
-  speed: 3.82
+  speed: 3.53
   targetPos: {x: 0, y: 0}
   followingTargets: []
   the_teacherSensor: {fileID: 1848949196}
@@ -398,7 +399,7 @@ MonoBehaviour:
   durLim: 0
   durMax: 0
   durCCCCCC: 0.2
-  strength: 7
+  strength: 1.6
   nowProcess: 0
   max: 20
   requireTime: 3
@@ -1886,7 +1887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1332940325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2208,7 +2209,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.196
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
