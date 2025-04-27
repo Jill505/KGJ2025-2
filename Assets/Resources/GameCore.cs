@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class GameCore : MonoBehaviour
 {
@@ -32,15 +33,41 @@ public class GameCore : MonoBehaviour
 
     float studentStr = 1f;
 
+    [Header("student spawn system")]
+    public GameObject studentAreaA;
+    public GameObject studentAreaB;
+    public GameObject[] studentPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartCoroutine(ranSpawnCycle());
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    IEnumerator ranSpawnCycle()
+    {
+        while (true)
+        {
+            studentSpawner();
+            yield return new WaitForSeconds(Random.Range(2f, 8f));
+        }
+    }
+
+    public void studentSpawner()
+    {
+        float ranX = Random.Range(studentAreaA.transform.position.x, studentAreaB.transform.position.x);
+        float ranY = Random.Range(studentAreaA.transform.position.y, studentAreaB.transform.position.y);
+        Vector2 ranVec = new Vector2();
+
+        int index = Random.Range(0, studentPrefab.Length);
+
+        Instantiate(studentPrefab[index], ranVec, Quaternion.identity);
     }
 
     public void teacherFightPlayer(Teacher teacher, Eleable eObject)

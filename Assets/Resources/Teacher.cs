@@ -63,7 +63,7 @@ public class Teacher : MonoBehaviour
             while (moveable)
             {
                 float ranX = Random.Range(moveAreaA.transform.position.x, moveAreaB.transform.position.x);
-                float ranY = Random.Range(moveAreaB.transform.position.y, moveAreaA.transform.position.y);
+                float ranY = Random.Range(moveAreaA.transform.position.y, moveAreaB.transform.position.y);
 
                 targetPos = new Vector2(ranX,ranY);
 
@@ -140,14 +140,16 @@ public class Teacher : MonoBehaviour
         }
         else if (the_teacherSensor.detectedTargets.Count > 0)
         {
-            //Debug.Log("Rolling gameo");
+            //Debug.Log("Rolling game");
 
             int roll = Random.Range(0, 30);
             if (roll <= 2)
             {
                 //對最近的目標發起戰鬥
-                target.GetComponent<Eleable>().makeEle(gameObject);
-
+                if (target.GetComponent<Eleable>().ableToBeEle == true)
+                {
+                    target.GetComponent<Eleable>().makeEle(gameObject);
+                }
             }
         }
 
