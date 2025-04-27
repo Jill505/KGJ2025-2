@@ -163,11 +163,13 @@ public class PlayerControl : MonoBehaviour
         {
             calVec = new Vector2(-1*moveSpeed, calVec.y);
             playerFacingPos = 1;
+            gameObject.transform.rotation = Quaternion.Euler(0,180,0);
             isInputtingX = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
             calVec = new Vector2(1 * moveSpeed, calVec.y);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             playerFacingPos = -1;
             isInputtingX = true;
         }
