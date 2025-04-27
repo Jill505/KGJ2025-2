@@ -78,6 +78,7 @@ public class GameCore : MonoBehaviour
         if (Scores[0] >= 30)
         {
             SceneManager.LoadScene(1);
+            //si
         }
     }
 
