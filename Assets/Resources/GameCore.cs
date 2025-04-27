@@ -69,8 +69,11 @@ public class GameCore : MonoBehaviour
     {
         while (true)
         {
-            studentSpawner();
-            yield return new WaitForSeconds(Random.Range(2f, 8f));
+            for (int i = 0; i < Random.Range(3,6); i++)
+            {
+                studentSpawner();
+            }
+            yield return new WaitForSeconds(Random.Range(2f, 5f));
         }
     }
 
@@ -181,7 +184,8 @@ public class GameCore : MonoBehaviour
                 succ = true;
             }
 
-            yield return null;
+            yield return null; 
+            eObject.makeFadeAndDel();
         }
 
         yield return null;
@@ -190,7 +194,10 @@ public class GameCore : MonoBehaviour
             Debug.Log("成功，快去聽<<溫室雜草>>！");
             //playerControl.GetOneSoul();
             //Del Target;
-            eObject.makeFadeAndDel();
+            if (eObject != null)
+            {
+                eObject.makeFadeAndDel();
+            }
         }
         else
         {
