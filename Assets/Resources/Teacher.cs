@@ -12,6 +12,8 @@ public class Teacher : MonoBehaviour
 {
     public GameCore gameCore;
     public GameObject soulPrefab;
+    public GameObject soulPrefab2;
+    public GameObject soulPrefab3;
     public bool moveable = false;
 
     public int myPlayerIndex = 0;
@@ -93,8 +95,23 @@ public class Teacher : MonoBehaviour
         moveToVec();
     }
 
-    public void GetOneSoul(Vector2 pos)
+    public void GetOneSoul(Vector2 pos, int soulIndex)
     {
+        GameObject tar = soulPrefab;
+        if (soulIndex == 0)
+        {
+            tar = soulPrefab;
+        }
+        if (soulIndex == 1)
+        {
+            tar = soulPrefab2;
+        }
+        if (soulIndex == 2)
+        {
+            tar = soulPrefab3;
+        }
+
+
         GameObject obj = Instantiate(soulPrefab, pos, Quaternion.identity);
         obj.GetComponent<FallowingSoul>().teacher = this;
         followingTargets.Add(obj);

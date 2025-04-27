@@ -47,7 +47,7 @@ public class Eleable : MonoBehaviour
         }
         yield return new WaitForSeconds(0.1f);
 
-        tracker.GetOneSoul(gameObject.transform.position);
+        tracker.GetOneSoul(gameObject.transform.position, myEleType);
         Destroy(gameObject);
     }
 
@@ -71,7 +71,7 @@ public class Eleable : MonoBehaviour
         }
         yield return new WaitForSeconds(0.1f);
 
-        GameObject.Find("GameCore").GetComponent<GameCore>().playerControl.GetOneSoul(gameObject.transform.position);
+        GameObject.Find("GameCore").GetComponent<GameCore>().playerControl.GetOneSoul(gameObject.transform.position, myEleType);
         Destroy(gameObject);
     }
 

@@ -57,11 +57,13 @@ public class Students : MonoBehaviour
                 {
                     Ran = 1;
                     rightMode = true;
+                    transform.rotation = Quaternion.Euler(0,180,0);   
                 }
                 else
                 {
                     Ran = -1;
                     rightMode = false;
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
 
                 rb2d.linearVelocityX = moveSpeed * Ran;

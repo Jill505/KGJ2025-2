@@ -29,6 +29,9 @@ public class PlayerControl : MonoBehaviour
 
     [Header("Following Soul system")]
     public GameObject soulPrefab;
+    public GameObject soulPrefab2;
+    public GameObject soulPrefab3;
+
     public List<GameObject> followingTargets;
     public float distanceX = 1.2f;
     public float distanceY = 0.1f;
@@ -88,9 +91,23 @@ public class PlayerControl : MonoBehaviour
         followingTargets.Add(obj);
         fallowingSoulMakeALine();
     }
-    public void GetOneSoul(Vector2 pos)
+    public void GetOneSoul(Vector2 pos, int soulIndex)
     {
-        GameObject obj = Instantiate(soulPrefab, pos, Quaternion.identity);
+        GameObject tar = soulPrefab;
+        if (soulIndex == 0)
+        {
+            tar = soulPrefab;
+        }
+        if (soulIndex == 1)
+        {
+            tar = soulPrefab2;
+        }
+        if (soulIndex == 2)
+        {
+            tar = soulPrefab3;
+        }
+
+        GameObject obj = Instantiate(tar, pos, Quaternion.identity);
         followingTargets.Add(obj);
         fallowingSoulMakeALine();
     }
