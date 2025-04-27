@@ -2,7 +2,9 @@ using NUnit.Framework;
 using System.Collections;
 using System.Runtime.Serialization.Formatters;
 using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements.Experimental;
 
@@ -16,6 +18,8 @@ public class GameCore : MonoBehaviour
     public int p2Score;
     public int p3Score;
     public int p4Score;
+
+    static public int[] Scores = new int[4];
 
     public PlayerControl playerControl;
 
@@ -58,11 +62,36 @@ public class GameCore : MonoBehaviour
 
         theText.text = str;
     }
+    
+    public void GameEndJudge()
+    {
+        //game End
+        if (p2Score >= 30 || p3Score >= 30 || p4Score >= 30)
+        {
+            if (Scores[0] == 0)
+            {
+                SceneManager.LoadScene(3);
+            }
+            //game end
+            SceneManager.LoadScene(2);
+        }
+        if (Scores[0] >= 30)
+        {
+            SceneManager.LoadScene(1);
+            //si
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
+        Scores[0] = playerStudentIndex;
+        Scores[1] = p2Score;
+        Scores[2] = p3Score;
+        Scores[3] = p4Score;
+
         UIupdate();
+        GameEndJudge();
     }
 
     IEnumerator ranSpawnCycle()
