@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: st1
+  m_Name: New Animation
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,9 +24,9 @@ AnimationClip:
       value: {fileID: -3668896385066451961, guid: 5323bd79daa931f41a3d7bc7878bfb14, type: 3}
     - time: 0.05
       value: {fileID: -2102159777022628180, guid: 002cce865afec334a93fb96278866cb7, type: 3}
-    - time: 0.11666667
+    - time: 0.1
       value: {fileID: -1039152638733817070, guid: 258a5039fd3b7064fa632ba877689e71, type: 3}
-    - time: 0.16666667
+    - time: 0.15
       value: {fileID: -8698488145182309833, guid: bdd0d7502cfe26c4ab997037db552fce, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.18333334
+    m_StopTime: 0.16666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

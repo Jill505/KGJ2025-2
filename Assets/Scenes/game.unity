@@ -353,6 +353,8 @@ MonoBehaviour:
   studentAreaB: {fileID: 1023208855}
   studentPrefab:
   - {fileID: 4229199204849060951, guid: 03e3f97a2c1d2764ab689606d6f267ef, type: 3}
+  - {fileID: 4229199204849060951, guid: 3ff8a0113b4482449a37f2389ac907f7, type: 3}
+  - {fileID: 4229199204849060951, guid: 3ac1d5d0f798a6542bb67ae47ccd55e0, type: 3}
   theText: {fileID: 1123799067}
 --- !u!4 &86057147
 Transform:
@@ -562,6 +564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 662509075121500774, guid: 16ded456eb9104d4ab4f4721c8baeb5b, type: 3}
+  soulPrefab3: {fileID: 662509075121500774, guid: ff5cd3ac5683c9846b6fc82308d619ff, type: 3}
   moveable: 0
   myPlayerIndex: 2
   inFight: 0
@@ -2210,6 +2214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 662509075121500774, guid: 16ded456eb9104d4ab4f4721c8baeb5b, type: 3}
+  soulPrefab3: {fileID: 662509075121500774, guid: ff5cd3ac5683c9846b6fc82308d619ff, type: 3}
   moveable: 0
   myPlayerIndex: 4
   inFight: 0
@@ -2344,7 +2350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &923117080
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2502,6 +2508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   students: {fileID: 0}
   ableToBeEle: 0
+  myEleType: 0
   targetPos: {fileID: 0}
   sr: {fileID: 923117080}
 --- !u!1 &942101261
@@ -3625,6 +3632,8 @@ MonoBehaviour:
   target: {fileID: 0}
   limitedDistance: 8
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 662509075121500774, guid: 16ded456eb9104d4ab4f4721c8baeb5b, type: 3}
+  soulPrefab3: {fileID: 662509075121500774, guid: ff5cd3ac5683c9846b6fc82308d619ff, type: 3}
   followingTargets: []
   distanceX: 1.2
   distanceY: 0.2
@@ -4371,6 +4380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 662509075121500774, guid: 16ded456eb9104d4ab4f4721c8baeb5b, type: 3}
+  soulPrefab3: {fileID: 662509075121500774, guid: ff5cd3ac5683c9846b6fc82308d619ff, type: 3}
   moveable: 0
   myPlayerIndex: 3
   inFight: 0
