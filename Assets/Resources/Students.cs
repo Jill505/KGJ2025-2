@@ -25,6 +25,8 @@ public class Students : MonoBehaviour
         oriPos = transform.position;
         Strength = Random.Range(0.3f, 2);
         rb2d = GetComponent<Rigidbody2D>();
+        moveSpeed = Random.Range(3.5f,6f);
+        moveXArea = Random.Range(2f,4f);
 
         int Ran = Random.Range(0, 2);
         if (Ran == 0)
