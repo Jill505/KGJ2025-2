@@ -42,6 +42,11 @@ public class GameCore : MonoBehaviour
     void Start()
     {
         StartCoroutine(ranSpawnCycle());
+
+        for (int i = 0; i < 10; i++)
+        {
+            studentSpawner();
+        }
     }
 
     // Update is called once per frame
@@ -63,7 +68,7 @@ public class GameCore : MonoBehaviour
     {
         float ranX = Random.Range(studentAreaA.transform.position.x, studentAreaB.transform.position.x);
         float ranY = Random.Range(studentAreaA.transform.position.y, studentAreaB.transform.position.y);
-        Vector2 ranVec = new Vector2();
+        Vector2 ranVec = new Vector2(ranX, ranY);
 
         int index = Random.Range(0, studentPrefab.Length);
 

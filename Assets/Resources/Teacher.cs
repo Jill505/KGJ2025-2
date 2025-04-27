@@ -132,25 +132,24 @@ public class Teacher : MonoBehaviour
         if (the_teacherSensor.playerInArea)
         {
             //Debug.Log("Rolling player");
-
+            /*
             int roll = Random.Range(0, 150);
-            roll = 1;
             if (roll <= 1 + (gameCore.playerControl.followingTargets.Count * 4))
             {
                 //對玩家發起戰鬥
                 if (inFight == false)
                 {
                     Debug.Log(gameObject.name + "對玩家發起了戰鬥");
-                    teacherFight();
+                    //teacherFight();
                 }
-            }
+            }*/
         }
         else if (the_teacherSensor.detectedTargets.Count > 0)
         {
             //Debug.Log("Rolling game");
 
             int roll = Random.Range(0, 30);
-            if (roll <= 2)
+            if (roll <= 15)
             {
                 //對最近的目標發起戰鬥
                 if (target.GetComponent<Eleable>().ableToBeEle == true)
@@ -159,7 +158,6 @@ public class Teacher : MonoBehaviour
                 }
             }
         }
-
     }
     
     public void teacherFight()
