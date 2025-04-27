@@ -562,6 +562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 0}
+  soulPrefab3: {fileID: 0}
   moveable: 0
   myPlayerIndex: 2
   inFight: 0
@@ -2210,6 +2212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 0}
+  soulPrefab3: {fileID: 0}
   moveable: 0
   myPlayerIndex: 4
   inFight: 0
@@ -2502,6 +2506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   students: {fileID: 0}
   ableToBeEle: 0
+  myEleType: 0
   targetPos: {fileID: 0}
   sr: {fileID: 923117080}
 --- !u!1 &942101261
@@ -3625,6 +3630,8 @@ MonoBehaviour:
   target: {fileID: 0}
   limitedDistance: 8
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 0}
+  soulPrefab3: {fileID: 0}
   followingTargets: []
   distanceX: 1.2
   distanceY: 0.2
@@ -3938,7 +3945,7 @@ Transform:
   m_GameObject: {fileID: 1417658823}
   serializedVersion: 2
   m_LocalRotation: {x: 0.003716458, y: 0.00012791851, z: 0.05590525, w: 0.9984292}
-  m_LocalPosition: {x: 15.4, y: -1.1, z: -0}
+  m_LocalPosition: {x: 15.4, y: -1.1, z: 0}
   m_LocalScale: {x: 5.5285892, y: 6.42269, z: 3.831697}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4371,6 +4378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCore: {fileID: 0}
   soulPrefab: {fileID: 662509075121500774, guid: 6633f29a57127a54cb400ff350b78a2a, type: 3}
+  soulPrefab2: {fileID: 0}
+  soulPrefab3: {fileID: 0}
   moveable: 0
   myPlayerIndex: 3
   inFight: 0

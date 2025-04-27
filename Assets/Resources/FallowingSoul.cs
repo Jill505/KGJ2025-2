@@ -29,12 +29,14 @@ public class FallowingSoul : MonoBehaviour
             {
                 Vector2 offest = new Vector2(disX * (myFollwingIndex + 1), 0) * PlayerControl.playerFacingPos;
                 transform.position = Vector2.Lerp(transform.position, (FollowingTarget.transform.position) + (Vector3)offest, offestSpeed);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else//代表是老師
             {
                 Debug.Log("TeacherOBject");
                 Vector2 offest = new Vector2(disX * (myFollwingIndex + 1), 0) * teacher.FacingPos;
                 transform.position = Vector2.Lerp(transform.position, (FollowingTarget.transform.position) + (Vector3)offest, offestSpeed);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
     }
