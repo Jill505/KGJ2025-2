@@ -51,10 +51,18 @@ public class GameCore : MonoBehaviour
         }
     }
 
+    public Text theText;
+    public void UIupdate()
+    {
+        string str = "產だ计" + playerStudentIndex + "/30\n" + "厚ρ畍だ计" + p2Score + "/30\n" + "屡ρ畍だ计" + p3Score + "/30\n" + "ρ畍だ计" + p4Score + "/30\n";
+
+        theText.text = str;
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        UIupdate();
     }
 
     IEnumerator ranSpawnCycle()
